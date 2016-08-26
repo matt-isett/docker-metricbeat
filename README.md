@@ -1,5 +1,5 @@
 
-# docker-metricbeat
+# Elastic Metricbeat docker image
 
 #Usage
 
@@ -15,3 +15,6 @@
         -e PASS:changeme \
         -h metricDockerHost
         metricbeat
+        
+        
+Stress is pre-installed so you can log into the container and create "noise" from your Docker image to be reported within the Kibana's Metricbeat Dashboard
