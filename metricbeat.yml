@@ -68,11 +68,11 @@ metricbeat.modules:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["192.168.99.1:9200"]
+  hosts: ["${HOST:elasticsearch}:${PORT:9200}"]
   
-  username: elastic
+  username: ${USER:elastic}
 
-  password: elasticpassword
+  password: ${PASS:changeme}
 
   # Template name. By default the template name is metricbeat.
   template.name: "metricbeat"
