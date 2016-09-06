@@ -13,6 +13,9 @@ RUN tar zxvf ${FILENAME}
 
 WORKDIR metricbeat-${VERSION}-${ARCH}
 ADD metricbeat.yml metricbeat.yml
+COPY wait-for-elastic.sh wait-for-elastic.sh
+COPY import_dashboards.sh kibana/import_dashboards.sh
 
 CMD ["./metricbeat", "-e", "-c","metricbeat.yml", "-d", "publish"]
+
 
