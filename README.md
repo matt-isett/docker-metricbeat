@@ -3,12 +3,16 @@
 
 #Usage
 
+# Build
+      docker build --build-arg ELASTICSEARCH_VERSION=5.0.0-alpha5 -t metricbeat .
+
 ### Elasticsearch
       docker run metricbeat
 
 ### Custom Endpoint
 
       docker run -d \
+        -e ELASTICSEARCH_VERSION=5.0.0-alpha5 \
         -e HOST=elasticsearch.in.aws.com \
         -e PORT=80 \
         -e USER:elastic \
